@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+langgraph
+langchain
+langchain-openai
+langchain-groq
+tavily-python
+qdrant-client
+redis
+python-dotenv
+pydantic
+pydantic-settings
+langchain-core
