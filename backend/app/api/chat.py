@@ -1,22 +1,26 @@
 from fastapi import APIRouter
 
-from app.models.chat_models import ChatRequest
 from app.graph.workflow import graph
+from app.graph.workflow import ChatRequest
 
-router = APIRouter()
+router = APIRouter(
+    prefix="/chat",
+    tags=["Chat"]
+)
 
 
-@router.post("/chat")
-def chat(request: ChatRequest):
+@router.post("")
+async def chat(request: ChatRequest):
 
     result = graph.invoke(
         {
             "query": request.query,
-            "web_results": "",
-            "answer": ""
+            "session_id": request.session_id
         }
     )
 
     return {
-        "answer": result["answer"]
+        "answer": result["answer"],
+        "logs": result["logs"],
+        "metrics": result.get("metrics", {})
     }

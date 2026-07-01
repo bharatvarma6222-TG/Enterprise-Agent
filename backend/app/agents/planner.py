@@ -1,34 +1,36 @@
-from app.core.llm import llm
+from app.llm.manager import llm
 import ast
 
 
 def create_plan(query: str):
 
     prompt = f"""
-You are a research planning agent.
+You are a planning agent.
 
-Break the user's request into smaller research tasks.
+If the request is SIMPLE
+(greeting, math, memory question, single fact)
+
+Return
+
+["single_task"]
+
+ONLY.
+
+If it requires research or multiple steps,
+break it into multiple tasks.
 
 Return ONLY a Python list.
 
-Example:
-[
-    "Research LangGraph features",
-    "Research CrewAI features",
-    "Compare LangGraph and CrewAI architectures"
-]
+User:
 
-User Request:
 {query}
 """
 
     response = llm.invoke(prompt)
 
     try:
-        return ast.literal_eval(
-            response.content
-        )
+        return ast.literal_eval(response.content)
+
     except Exception:
-        return [
-            response.content
-        ]
+
+        return ["single_task"]

@@ -5,6 +5,7 @@ from qdrant_client.models import (
 
 from app.retrieval.qdrant_client import client
 
+
 client.recreate_collection(
     collection_name="semantic_memory",
     vectors_config=VectorParams(

@@ -1,0 +1,127 @@
+{
+    "query": "tell me a poem about game",
+    "answer": "Here's a short poem about games:\n\nIn virtual worlds, we find our thrill,\nWith controllers in hand, our spirits fill.\nFrom quests to battles, we play all night,\nOur avatars strong, our will to fight.\n\nWith every level, a challenge awaits,\nOur skills are tested, our focus creates.\nThe rush of victory, the agony of defeat,\nOur emotions ride, as our characters compete.\n\nIn games, we find escape, we find delight,\nA world of fantasy, where we take flight.\nSo let us play, and let our spirits soar,\nFor in the world of games, we ask for more.\n\nSources Used:\n- No uploaded document citations\n",
+    "session_id": "",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 5 Tasks",
+        "Memory Loaded",
+        "Tool Selected: search",
+        "Research Agent Started",
+        "Research Agent Finished",
+        "Critic Started",
+        "Critic Finished",
+        "Writer Started",
+        "Writer Finished",
+        "Evaluator Started",
+        "Evaluator Finished",
+        "Fact Extraction Started",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1782916116.3883173,
+        "task_count": 5,
+        "tool": "search",
+        "total_time": 12.46
+    },
+    "evaluation": {
+        "groundedness": 5,
+        "completeness": 7,
+        "hallucination": "Low",
+        "confidence": 60
+    },
+    "citations": [],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1782916116.3840296,
+            "end": 1782916116.3850434,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1782916116.3891356,
+            "end": 1782916117.342863,
+            "duration": 0.954,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1782916117.344046,
+            "end": 1782916117.813106,
+            "duration": 0.469,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1782916117.8138316,
+            "end": 1782916118.4510026,
+            "duration": 0.637,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "retrieval",
+            "start": 1782916118.4532006,
+            "end": 1782916123.342017,
+            "duration": 4.889,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "researcher",
+            "start": 1782916123.3439429,
+            "end": 1782916123.7993546,
+            "duration": 0.455,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "critic",
+            "start": 1782916123.8002508,
+            "end": 1782916124.3820775,
+            "duration": 0.582,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "writer",
+            "start": 1782916124.3833504,
+            "end": 1782916125.1450098,
+            "duration": 0.762,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "evaluator",
+            "start": 1782916125.1461282,
+            "end": 1782916125.5187724,
+            "duration": 0.373,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "fact_extraction",
+            "start": 1782916125.5208087,
+            "end": 1782916125.7033203,
+            "duration": 0.183,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1782916125.7060566,
+            "end": 1782916128.8495498,
+            "duration": 3.143,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "5a9096cc-cfff-4599-b1b5-d852823c7aa2",
+    "created_at": "2026-07-01T19:58:48.853147"
+}

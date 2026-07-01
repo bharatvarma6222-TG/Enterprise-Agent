@@ -1,0 +1,73 @@
+{
+    "query": "what is 8 plus 9",
+    "answer": "89",
+    "session_id": "",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 2 Tasks",
+        "Memory Loaded",
+        "Tool Selected: calculator",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1782916155.6930041,
+        "task_count": 2,
+        "tool": "calculator",
+        "total_time": 3.88
+    },
+    "evaluation": {},
+    "citations": [],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1782916155.6903083,
+            "end": 1782916155.690969,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1782916155.6935027,
+            "end": 1782916156.8590226,
+            "duration": 1.166,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1782916156.8596694,
+            "end": 1782916157.3333476,
+            "duration": 0.474,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1782916157.3345063,
+            "end": 1782916157.648935,
+            "duration": 0.314,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_execution",
+            "start": 1782916157.650343,
+            "end": 1782916157.650859,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1782916157.6525486,
+            "end": 1782916159.5723946,
+            "duration": 1.92,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "a7239055-e13a-41a3-8db1-d86d89f12383",
+    "created_at": "2026-07-01T19:59:19.573755"
+}

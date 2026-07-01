@@ -1,4 +1,4 @@
-from app.core.llm import llm
+from app.llm.manager import llm
 
 
 def extract_fact(text: str):

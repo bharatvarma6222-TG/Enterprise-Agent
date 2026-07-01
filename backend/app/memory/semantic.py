@@ -41,3 +41,23 @@ def recall_memory(query: str):
     )
 
     return results
+
+
+def search_memory(query):
+
+    query_vector = embeddings.embed_query(query)
+
+    results = client.query_points(
+        collection_name="memory",
+        query=query_vector,
+        limit=5
+    )
+
+    memories = []
+
+    for point in results.points:
+        memories.append(
+            point.payload["text"]
+        )
+
+    return memories

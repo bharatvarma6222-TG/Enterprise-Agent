@@ -1,27 +1,20 @@
-from app.core.llm import llm
+from app.llm.manager import llm
 
 
-def critique_answer(
-    question,
-    context,
-    answer
-):
+def critique(research):
 
     prompt = f"""
-Question:
-{question}
+You are a critic agent.
 
-Context:
-{context}
+Review this research.
 
-Answer:
-{answer}
+Identify:
+- missing information
+- weak evidence
+- contradictions
 
-Check if answer is grounded.
-
-If incorrect explain why.
-
-If correct return PASS.
+Research:
+{research}
 """
 
     response = llm.invoke(prompt)

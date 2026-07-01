@@ -1,0 +1,73 @@
+{
+    "query": "what's my name??",
+    "answer": "['User preference: to be addressed by a specific name, either Bharat or Octane.', \"The user's name is Bharat.\", \"The user's name is Bharat.\", 'User preference: interested in the God of War series', 'The game Sekiro: Shadows Die Twice was released on March 22, 2019.']",
+    "session_id": "",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 3 Tasks",
+        "Memory Loaded",
+        "Tool Selected: memory",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1782916046.7520556,
+        "task_count": 3,
+        "tool": "memory",
+        "total_time": 3.98
+    },
+    "evaluation": {},
+    "citations": [],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1782916046.7496688,
+            "end": 1782916046.75023,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1782916046.7529235,
+            "end": 1782916047.1375039,
+            "duration": 0.385,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1782916047.138226,
+            "end": 1782916047.574456,
+            "duration": 0.436,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1782916047.5759797,
+            "end": 1782916047.8139303,
+            "duration": 0.238,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_execution",
+            "start": 1782916047.8151343,
+            "end": 1782916048.9123905,
+            "duration": 1.097,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1782916048.9141676,
+            "end": 1782916050.734499,
+            "duration": 1.82,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "faf2adc7-848b-4ae5-afd3-6d5be0f3b5c5",
+    "created_at": "2026-07-01T19:57:30.736052"
+}

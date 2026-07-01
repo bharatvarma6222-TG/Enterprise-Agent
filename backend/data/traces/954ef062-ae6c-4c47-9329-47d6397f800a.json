@@ -1,0 +1,73 @@
+{
+    "query": "what is 999 divided by 9",
+    "answer": "9999",
+    "session_id": "",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 4 Tasks",
+        "Memory Loaded",
+        "Tool Selected: calculator",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1782915852.0237813,
+        "task_count": 4,
+        "tool": "calculator",
+        "total_time": 3.39
+    },
+    "evaluation": {},
+    "citations": [],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1782915852.0210624,
+            "end": 1782915852.0217543,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1782915852.0250878,
+            "end": 1782915852.8635237,
+            "duration": 0.838,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1782915852.8651724,
+            "end": 1782915853.3376095,
+            "duration": 0.472,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1782915853.3383718,
+            "end": 1782915853.6442823,
+            "duration": 0.306,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_execution",
+            "start": 1782915853.6466725,
+            "end": 1782915853.64842,
+            "duration": 0.002,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1782915853.6508026,
+            "end": 1782915855.4178295,
+            "duration": 1.767,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "954ef062-ae6c-4c47-9329-47d6397f800a",
+    "created_at": "2026-07-01T19:54:15.420155"
+}
