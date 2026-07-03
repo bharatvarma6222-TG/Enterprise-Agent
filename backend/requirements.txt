@@ -20,3 +20,6 @@ langchain-text-splitters
 python-multipart
 langchain-anthropic
 langchain-ollama
+huggingface_hub
+langchain-cohere
+cohere

@@ -1,9 +1,9 @@
-from langchain_huggingface import HuggingFaceInferenceAPIEmbeddings
+from langchain_cohere import CohereEmbeddings
 from app.core.config import settings
 
-embeddings = HuggingFaceInferenceAPIEmbeddings(
-    api_key=settings.HF_TOKEN,
-    model_name="BAAI/bge-small-en-v1.5",
+embeddings = CohereEmbeddings(
+    model="embed-english-v3.0",
+    cohere_api_key=settings.COHERE_API_KEY,
 )
 
 print("Embeddings initialized")
