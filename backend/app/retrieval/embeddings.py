@@ -1,5 +1,5 @@
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai import OpenAIEmbeddings
 
-embeddings = HuggingFaceEmbeddings(
-    model_name="BAAI/bge-small-en-v1.5"
+embeddings = OpenAIEmbeddings(
+    model="text-embedding-3-small"
 )

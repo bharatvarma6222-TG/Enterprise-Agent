@@ -20,3 +20,5 @@ langchain-text-splitters
 python-multipart
 langchain-anthropic
 langchain-ollama
+langchain-openai
+openai
