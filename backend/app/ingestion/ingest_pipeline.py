@@ -35,12 +35,12 @@ def ingest_pdf(path: str, session_id: str):
         )
 
     client.upsert(
-        collection_name="documents",
+        collection_name="documents_v2",
         points=points
     )
 
     count = client.count(
-        collection_name="documents"
+        collection_name="documents_v2"
     )
 
     print("=" * 60)
@@ -48,7 +48,7 @@ def ingest_pdf(path: str, session_id: str):
     print("=" * 60)
 
     points, _ = client.scroll(
-        collection_name="documents",
+        collection_name="documents_v2",
         limit=5,
         with_payload=True
     )
@@ -59,7 +59,7 @@ def ingest_pdf(path: str, session_id: str):
         print(p.payload)
         print("=" * 60)
         points, _ = client.scroll(
-            collection_name="documents",
+            collection_name="documents_v2",
             limit=5,
             with_payload=True
         )
@@ -68,7 +68,7 @@ def ingest_pdf(path: str, session_id: str):
         print(p.payload)
 
     count = client.count(
-        collection_name="documents"
+        collection_name="documents_v2"
     )
 
     print("=" * 60)
