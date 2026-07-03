@@ -1,0 +1,144 @@
+{
+    "query": "hello",
+    "answer": "Hello! How can I help you today?\n\nSources Used:\n- langgraph.pdf (Chunk 0)\n- 5055.pdf (Chunk 0)\n- Gengar.pdf.pdf (Chunk 2)\n",
+    "session_id": "071caece-29d2-405e-a4e2-a2d39d80824d",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 1 Tasks",
+        "Memory Loaded",
+        "Tool Selected: search",
+        "Research Agent Started",
+        "Research Agent Finished",
+        "Critic Started",
+        "Critic Finished",
+        "Writer Started",
+        "Writer Finished",
+        "Evaluator Started",
+        "Evaluator Finished",
+        "Fact Extraction Started",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1783064651.1241672,
+        "task_count": 1,
+        "tool": "search",
+        "total_time": 7.0
+    },
+    "evaluation": {
+        "groundedness": 0,
+        "completeness": 0,
+        "hallucination": "High",
+        "confidence": 0
+    },
+    "citations": [
+        {
+            "source": "uploads\\langgraph.pdf",
+            "chunk_id": 0
+        },
+        {
+            "source": "uploads/langgraph.pdf",
+            "chunk_id": 0
+        },
+        {
+            "source": "uploads/5055.pdf",
+            "chunk_id": 0
+        },
+        {
+            "source": "uploads/Gengar.pdf.pdf",
+            "chunk_id": 2
+        }
+    ],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1783064651.1217282,
+            "end": 1783064651.1223555,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1783064651.124469,
+            "end": 1783064651.7718506,
+            "duration": 0.647,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1783064651.772424,
+            "end": 1783064652.1915677,
+            "duration": 0.419,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1783064652.192073,
+            "end": 1783064652.313928,
+            "duration": 0.122,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "retrieval",
+            "start": 1783064652.3157866,
+            "end": 1783064654.4962249,
+            "duration": 2.18,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "researcher",
+            "start": 1783064654.497001,
+            "end": 1783064654.8154018,
+            "duration": 0.318,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "critic",
+            "start": 1783064654.8162484,
+            "end": 1783064655.4565277,
+            "duration": 0.64,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "writer",
+            "start": 1783064655.4572973,
+            "end": 1783064655.7912054,
+            "duration": 0.334,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "evaluator",
+            "start": 1783064655.7918868,
+            "end": 1783064656.1205568,
+            "duration": 0.329,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "fact_extraction",
+            "start": 1783064656.1215208,
+            "end": 1783064656.3578014,
+            "duration": 0.236,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1783064656.358927,
+            "end": 1783064658.1219149,
+            "duration": 1.763,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "6442d4ed-0496-4b0e-a0fa-0ee8e19e6092",
+    "created_at": "2026-07-03T13:14:18.123742"
+}

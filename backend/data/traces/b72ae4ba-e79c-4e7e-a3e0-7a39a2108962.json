@@ -1,0 +1,73 @@
+{
+    "query": "my name is octane",
+    "answer": "['User name: Octane', 'User preference: to be addressed by a specific name, either Bharat or Octane.', \"The user's name is Bharat.\", \"The user's name is Bharat.\", 'User preference: interested in the God of War series']",
+    "session_id": "cd176f44-c00c-4638-826e-76e82e59b146",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 1 Tasks",
+        "Memory Loaded",
+        "Tool Selected: memory",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1782919486.2523084,
+        "task_count": 1,
+        "tool": "memory",
+        "total_time": 7.71
+    },
+    "evaluation": {},
+    "citations": [],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1782919486.2504792,
+            "end": 1782919486.2507677,
+            "duration": 0.0,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1782919486.2528443,
+            "end": 1782919487.029577,
+            "duration": 0.777,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1782919487.030564,
+            "end": 1782919490.6087432,
+            "duration": 3.578,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1782919490.610041,
+            "end": 1782919490.9910915,
+            "duration": 0.381,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_execution",
+            "start": 1782919490.9922268,
+            "end": 1782919492.119946,
+            "duration": 1.128,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1782919492.1219456,
+            "end": 1782919493.9629383,
+            "duration": 1.841,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "b72ae4ba-e79c-4e7e-a3e0-7a39a2108962",
+    "created_at": "2026-07-01T20:54:53.964131"
+}

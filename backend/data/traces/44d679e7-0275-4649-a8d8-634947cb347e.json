@@ -1,0 +1,144 @@
+{
+    "query": "what is practical 2",
+    "answer": "I couldn't find relevant information in the uploaded documents.\n\nSources Used:\n- Gengar.pdf.pdf (Chunk 9)\n- langgraph.pdf (Chunk 8)\n- langgraph.pdf (Chunk 6)\n",
+    "session_id": "c1ff03c5-2cf2-401e-8180-3524ad86d09f",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 3 Tasks",
+        "Memory Loaded",
+        "Tool Selected: search",
+        "Research Agent Started",
+        "Research Agent Finished",
+        "Critic Started",
+        "Critic Finished",
+        "Writer Started",
+        "Writer Finished",
+        "Evaluator Started",
+        "Evaluator Finished",
+        "Fact Extraction Started",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1783015976.6192138,
+        "task_count": 3,
+        "tool": "search",
+        "total_time": 20.64
+    },
+    "evaluation": {
+        "groundedness": 0,
+        "completeness": 0,
+        "hallucination": "High",
+        "confidence": 0
+    },
+    "citations": [
+        {
+            "source": "uploads/Gengar.pdf.pdf",
+            "chunk_id": 9
+        },
+        {
+            "source": "uploads\\langgraph.pdf",
+            "chunk_id": 8
+        },
+        {
+            "source": "uploads/langgraph.pdf",
+            "chunk_id": 8
+        },
+        {
+            "source": "uploads/langgraph.pdf",
+            "chunk_id": 6
+        }
+    ],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1783015976.6168914,
+            "end": 1783015976.6171281,
+            "duration": 0.0,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1783015976.619854,
+            "end": 1783015977.3024871,
+            "duration": 0.683,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1783015977.3031714,
+            "end": 1783015980.9049754,
+            "duration": 3.602,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1783015980.9071853,
+            "end": 1783015981.2608862,
+            "duration": 0.354,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "retrieval",
+            "start": 1783015981.2632074,
+            "end": 1783015985.268111,
+            "duration": 4.005,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "researcher",
+            "start": 1783015985.268965,
+            "end": 1783015985.9066868,
+            "duration": 0.638,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "critic",
+            "start": 1783015985.907716,
+            "end": 1783015986.3807445,
+            "duration": 0.473,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "writer",
+            "start": 1783015986.38211,
+            "end": 1783015990.8404465,
+            "duration": 4.458,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "evaluator",
+            "start": 1783015990.8418064,
+            "end": 1783015995.1888356,
+            "duration": 4.347,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "fact_extraction",
+            "start": 1783015995.19024,
+            "end": 1783015995.3203316,
+            "duration": 0.13,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1783015995.321666,
+            "end": 1783015997.2638726,
+            "duration": 1.942,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "44d679e7-0275-4649-a8d8-634947cb347e",
+    "created_at": "2026-07-02T23:43:17.267645"
+}

@@ -1,0 +1,140 @@
+{
+    "query": "what's in gengar pdf",
+    "answer": "The Gengar pdf appears to be a document related to a university subject, specifically deep learning with NLP laboratory. It includes a section on stemming, which generates the base word from a word by removing its affixes. An example of stemming is provided using the PorterStemmer from nltk.stem [Source: uploads/Gengar.pdf.pdf | Chunk: 10]. The subject code is 303105480 and it's for B.Tech 4 year.\n\nSources Used:\n- Gengar.pdf.pdf (Chunk 10)\n- langgraph.pdf (Chunk 0)\n",
+    "session_id": "ac25e2bc-b104-4783-b9da-e58ccdc59e68",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 2 Tasks",
+        "Memory Loaded",
+        "Tool Selected: pdf",
+        "Research Agent Started",
+        "Research Agent Finished",
+        "Critic Started",
+        "Critic Finished",
+        "Writer Started",
+        "Writer Finished",
+        "Evaluator Started",
+        "Evaluator Finished",
+        "Fact Extraction Started",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1783018619.148513,
+        "task_count": 2,
+        "tool": "pdf",
+        "total_time": 9.37
+    },
+    "evaluation": {
+        "groundedness": 5,
+        "completeness": 5,
+        "hallucination": "Unknown",
+        "confidence": 50
+    },
+    "citations": [
+        {
+            "source": "uploads/Gengar.pdf.pdf",
+            "chunk_id": 10
+        },
+        {
+            "source": "uploads/langgraph.pdf",
+            "chunk_id": 0
+        },
+        {
+            "source": "uploads\\langgraph.pdf",
+            "chunk_id": 0
+        }
+    ],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1783018619.1464968,
+            "end": 1783018619.146723,
+            "duration": 0.0,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1783018619.14906,
+            "end": 1783018619.5949645,
+            "duration": 0.446,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1783018619.595623,
+            "end": 1783018621.4770622,
+            "duration": 1.881,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1783018621.477782,
+            "end": 1783018621.79363,
+            "duration": 0.316,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "retrieval",
+            "start": 1783018621.7958379,
+            "end": 1783018625.3235443,
+            "duration": 3.528,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "researcher",
+            "start": 1783018625.3252816,
+            "end": 1783018626.121665,
+            "duration": 0.796,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "critic",
+            "start": 1783018626.1230388,
+            "end": 1783018626.82566,
+            "duration": 0.703,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "writer",
+            "start": 1783018626.8263555,
+            "end": 1783018627.4346519,
+            "duration": 0.608,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "evaluator",
+            "start": 1783018627.4396322,
+            "end": 1783018627.7175064,
+            "duration": 0.278,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "fact_extraction",
+            "start": 1783018627.7197027,
+            "end": 1783018627.838378,
+            "duration": 0.119,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1783018627.840354,
+            "end": 1783018628.517486,
+            "duration": 0.677,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "ba029caa-91d4-47cb-a06d-333c2c261584",
+    "created_at": "2026-07-03T00:27:08.521238"
+}

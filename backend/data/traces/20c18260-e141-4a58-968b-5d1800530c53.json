@@ -1,0 +1,73 @@
+{
+    "query": "compare pdfs recently i uploaded",
+    "answer": "['User name: Octane', 'User name: Octane', 'User preference: interested in the God of War series', 'User preference: to be addressed by a specific name, either Bharat or Octane.', \"The user's name is Bharat.\"]",
+    "session_id": "0c7090a4-2f76-47ea-8e96-fe8529062095",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 3 Tasks",
+        "Memory Loaded",
+        "Tool Selected: memory",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1782920069.1132243,
+        "task_count": 3,
+        "tool": "memory",
+        "total_time": 4.07
+    },
+    "evaluation": {},
+    "citations": [],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1782920069.1102195,
+            "end": 1782920069.1109807,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1782920069.1136568,
+            "end": 1782920069.714033,
+            "duration": 0.6,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1782920069.7146199,
+            "end": 1782920070.1549788,
+            "duration": 0.44,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1782920070.1555223,
+            "end": 1782920070.294815,
+            "duration": 0.139,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_execution",
+            "start": 1782920070.296838,
+            "end": 1782920071.312629,
+            "duration": 1.016,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1782920071.3144069,
+            "end": 1782920073.178988,
+            "duration": 1.865,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "20c18260-e141-4a58-968b-5d1800530c53",
+    "created_at": "2026-07-01T21:04:33.180285"
+}

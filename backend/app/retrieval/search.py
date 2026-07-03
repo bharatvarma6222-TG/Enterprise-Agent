@@ -9,8 +9,12 @@ client = get_qdrant_client()
 def vector_search(
     query,
     session_id=None,
-    score_threshold=0.75
+    score_threshold=0.0
 ):
+    print("=" * 60)
+    print("VECTOR SEARCH QUERY:", query)
+    print("SESSION FILTER:", session_id)
+    print("=" * 60)
 
     query_vector = embeddings.embed_query(query)
 
@@ -39,7 +43,7 @@ def vector_search(
 
         query=query_vector,
 
-        query_filter=query_filter,
+        query_filter=None,
 
         score_threshold=score_threshold,
 
@@ -48,6 +52,10 @@ def vector_search(
         with_payload=True
 
     )
+
+    print("=" * 60)
+    print("FOUND POINTS:", len(results.points))
+    print("=" * 60)
 
     docs = []
 

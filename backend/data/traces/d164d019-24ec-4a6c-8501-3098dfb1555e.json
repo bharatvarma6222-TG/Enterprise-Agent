@@ -1,0 +1,140 @@
+{
+    "query": "hey",
+    "answer": "Hello! How can I help you today?\n\nSources Used:\n- crewai.pdf (Chunk 0)\n- 5055.pdf (Chunk 0)\n- Gengar.pdf.pdf (Chunk 2)\n",
+    "session_id": "071caece-29d2-405e-a4e2-a2d39d80824d",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 1 Tasks",
+        "Memory Loaded",
+        "Tool Selected: search",
+        "Research Agent Started",
+        "Research Agent Finished",
+        "Critic Started",
+        "Critic Finished",
+        "Writer Started",
+        "Writer Finished",
+        "Evaluator Started",
+        "Evaluator Finished",
+        "Fact Extraction Started",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1783064504.7009995,
+        "task_count": 1,
+        "tool": "search",
+        "total_time": 14.13
+    },
+    "evaluation": {
+        "groundedness": 2,
+        "completeness": 1,
+        "hallucination": "High",
+        "confidence": 10
+    },
+    "citations": [
+        {
+            "source": "uploads\\crewai.pdf",
+            "chunk_id": 0
+        },
+        {
+            "source": "uploads/5055.pdf",
+            "chunk_id": 0
+        },
+        {
+            "source": "uploads/Gengar.pdf.pdf",
+            "chunk_id": 2
+        }
+    ],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1783064504.6960397,
+            "end": 1783064504.6970954,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1783064504.702302,
+            "end": 1783064505.7511606,
+            "duration": 1.049,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1783064505.7534695,
+            "end": 1783064510.0869176,
+            "duration": 4.333,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1783064510.0884492,
+            "end": 1783064510.4986758,
+            "duration": 0.41,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "retrieval",
+            "start": 1783064510.5013669,
+            "end": 1783064514.9028945,
+            "duration": 4.402,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "researcher",
+            "start": 1783064514.9054267,
+            "end": 1783064515.3122213,
+            "duration": 0.407,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "critic",
+            "start": 1783064515.3146966,
+            "end": 1783064515.8232553,
+            "duration": 0.509,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "writer",
+            "start": 1783064515.824977,
+            "end": 1783064516.0263016,
+            "duration": 0.201,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "evaluator",
+            "start": 1783064516.0272408,
+            "end": 1783064516.4404695,
+            "duration": 0.413,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "fact_extraction",
+            "start": 1783064516.44299,
+            "end": 1783064516.5858831,
+            "duration": 0.143,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1783064516.5885293,
+            "end": 1783064518.8269866,
+            "duration": 2.238,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "d164d019-24ec-4a6c-8501-3098dfb1555e",
+    "created_at": "2026-07-03T13:11:58.829388"
+}

@@ -1,0 +1,73 @@
+{
+    "query": "do you remember my name",
+    "answer": "['User name: Octane', 'User preference: to be addressed by a specific name, either Bharat or Octane.', \"The user's name is Bharat.\", \"The user's name is Bharat.\", \"The user's name is Octane.\"]",
+    "session_id": "cd176f44-c00c-4638-826e-76e82e59b146",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 1 Tasks",
+        "Memory Loaded",
+        "Tool Selected: memory",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1782919552.848311,
+        "task_count": 1,
+        "tool": "memory",
+        "total_time": 3.56
+    },
+    "evaluation": {},
+    "citations": [],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1782919552.844323,
+            "end": 1782919552.8450365,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1782919552.8490095,
+            "end": 1782919553.1889658,
+            "duration": 0.34,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1782919553.1901166,
+            "end": 1782919553.6076248,
+            "duration": 0.418,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1782919553.608488,
+            "end": 1782919553.8530152,
+            "duration": 0.245,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_execution",
+            "start": 1782919553.855779,
+            "end": 1782919554.6992931,
+            "duration": 0.844,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1782919554.7007465,
+            "end": 1782919556.4058807,
+            "duration": 1.705,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "480cc891-d190-4368-9e20-939368b7a84a",
+    "created_at": "2026-07-01T20:55:56.407369"
+}

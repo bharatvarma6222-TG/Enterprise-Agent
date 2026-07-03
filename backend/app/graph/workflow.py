@@ -321,7 +321,7 @@ def retrieval_node(state):
             "Searching knowledge..."
         )
 
-        tasks = state["plan"]
+        tasks = [state["query"]]
 
         all_docs = []
         citations = []
@@ -339,6 +339,11 @@ def retrieval_node(state):
         # ----------------------------
         # Run all retrievals in parallel
         # ----------------------------
+
+        print("=" * 80)
+        print("PLAN")
+        print(tasks)
+        print("=" * 80)
 
         with ThreadPoolExecutor(max_workers=4) as executor:
 

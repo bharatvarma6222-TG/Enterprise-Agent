@@ -1,0 +1,127 @@
+{
+    "query": "explain pdf i uploaded",
+    "answer": "I couldn't find relevant information in the uploaded documents.\n\nSources Used:\n- No uploaded document citations\n",
+    "session_id": "25fd0d4d-d3ab-447b-88d9-9a7f909cbf7f",
+    "logs": [
+        "Workflow Started",
+        "Planner Started",
+        "Planner Created 3 Tasks",
+        "Memory Loaded",
+        "Tool Selected: pdf",
+        "Research Agent Started",
+        "Research Agent Finished",
+        "Critic Started",
+        "Critic Finished",
+        "Writer Started",
+        "Writer Finished",
+        "Evaluator Started",
+        "Evaluator Finished",
+        "Fact Extraction Started",
+        "Memory Stored"
+    ],
+    "metrics": {
+        "start_time": 1782920288.723933,
+        "task_count": 3,
+        "tool": "pdf",
+        "total_time": 7.48
+    },
+    "evaluation": {
+        "groundedness": 0,
+        "completeness": 0,
+        "hallucination": "High",
+        "confidence": 0
+    },
+    "citations": [],
+    "trace": [
+        {
+            "node": "guardrail",
+            "start": 1782920288.7205882,
+            "end": 1782920288.721324,
+            "duration": 0.001,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "planner",
+            "start": 1782920288.7244904,
+            "end": 1782920289.0917292,
+            "duration": 0.367,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "memory",
+            "start": 1782920289.0928047,
+            "end": 1782920289.6373646,
+            "duration": 0.545,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "tool_router",
+            "start": 1782920289.638016,
+            "end": 1782920289.9636214,
+            "duration": 0.326,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "retrieval",
+            "start": 1782920289.9648392,
+            "end": 1782920292.6986234,
+            "duration": 2.734,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "researcher",
+            "start": 1782920292.6994805,
+            "end": 1782920292.8819308,
+            "duration": 0.182,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "critic",
+            "start": 1782920292.883183,
+            "end": 1782920293.3155653,
+            "duration": 0.432,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "writer",
+            "start": 1782920293.3169641,
+            "end": 1782920293.6670082,
+            "duration": 0.35,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "evaluator",
+            "start": 1782920293.6677563,
+            "end": 1782920293.9526453,
+            "duration": 0.285,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "fact_extraction",
+            "start": 1782920293.9536133,
+            "end": 1782920294.2842548,
+            "duration": 0.331,
+            "status": "success",
+            "error": null
+        },
+        {
+            "node": "Store Memory",
+            "start": 1782920294.285399,
+            "end": 1782920296.2040558,
+            "duration": 1.919,
+            "status": "success",
+            "error": null
+        }
+    ],
+    "trace_id": "025a9d7d-1d8b-4c60-b3fd-29490af4c756",
+    "created_at": "2026-07-01T21:08:16.205386"
+}

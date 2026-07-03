@@ -39,4 +39,40 @@ def ingest_pdf(path: str, session_id: str):
         points=points
     )
 
+    count = client.count(
+        collection_name="documents"
+    )
+
+    print("=" * 60)
+    print("TOTAL VECTORS:", count.count)
+    print("=" * 60)
+
+    points, _ = client.scroll(
+        collection_name="documents",
+        limit=5,
+        with_payload=True
+    )
+
+    print("=" * 60)
+    print("FIRST STORED PAYLOADS")
+    for p in points:
+        print(p.payload)
+        print("=" * 60)
+        points, _ = client.scroll(
+            collection_name="documents",
+            limit=5,
+            with_payload=True
+        )
+
+    for p in points:
+        print(p.payload)
+
+    count = client.count(
+        collection_name="documents"
+    )
+
+    print("=" * 60)
+    print("TOTAL VECTORS IN DOCUMENTS:", count.count)
+    print("=" * 60)
+
     return len(points)
