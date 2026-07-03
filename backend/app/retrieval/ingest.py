@@ -11,7 +11,7 @@ def add_document(text: str):
     vector = embeddings.embed_query(text)
 
     client.upsert(
-        collection_name="documents",
+        collection_name="documents_v2",
         points=[
             {
                 "id": str(uuid4()),

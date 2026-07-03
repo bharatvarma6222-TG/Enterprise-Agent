@@ -39,7 +39,7 @@ def vector_search(
 
     results = client.query_points(
 
-        collection_name="documents",
+        collection_name="documents_v2",
 
         query=query_vector,
 
@@ -117,7 +117,7 @@ def search_by_filename(
 
     results, _ = client.scroll(
 
-        collection_name="documents",
+        collection_name="documents_v2",
 
         scroll_filter=models.Filter(
             must=must_conditions

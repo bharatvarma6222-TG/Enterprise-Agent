@@ -9,7 +9,7 @@ if client.collection_exists("documents"):
     )
 
 client.create_collection(
-    collection_name="documents",
+    collection_name="documents_v2",
     vectors_config=VectorParams(
         size=384,
         distance=Distance.COSINE

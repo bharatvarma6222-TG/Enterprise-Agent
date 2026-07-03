@@ -8,11 +8,11 @@ from app.retrieval.qdrant_client import get_qdrant_client
 client = get_qdrant_client()
 
 client.delete_collection(
-    collection_name="documents"
+    collection_name="documents_v2"
 )
 
 client.create_collection(
-    collection_name="documents",
+    collection_name="documents_v2",
     vectors_config=VectorParams(
         size=384,
         distance=Distance.COSINE

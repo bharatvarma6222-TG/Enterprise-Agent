@@ -1,10 +1,10 @@
 import os
-from langchain_openai import OpenAIEmbeddings
+
 from app.core.config import settings
 
-embeddings = OpenAIEmbeddings(
-    model="text-embedding-3-small",
-    api_key=settings.OPENAI_API_KEY,
-)
+from langchain_community.embeddings import FastEmbedEmbeddings
 
+embeddings = FastEmbedEmbeddings(
+    model_name="BAAI/bge-small-en-v1.5"
+)
 print("Embeddings initialized")
