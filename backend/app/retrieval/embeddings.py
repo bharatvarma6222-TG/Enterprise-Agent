@@ -1,10 +1,9 @@
-import os
-
+from langchain_huggingface import HuggingFaceInferenceAPIEmbeddings
 from app.core.config import settings
 
-from langchain_community.embeddings import FastEmbedEmbeddings
-
-embeddings = FastEmbedEmbeddings(
-    model_name="BAAI/bge-small-en-v1.5"
+embeddings = HuggingFaceInferenceAPIEmbeddings(
+    api_key=settings.HF_TOKEN,
+    model_name="BAAI/bge-small-en-v1.5",
 )
+
 print("Embeddings initialized")

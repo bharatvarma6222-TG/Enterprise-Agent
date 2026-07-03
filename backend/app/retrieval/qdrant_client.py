@@ -25,7 +25,7 @@ def create_indexes():
             client.create_collection(
                 collection_name=COLLECTION_NAME,
                 vectors_config=models.VectorParams(
-                    size=384,
+                    size=1536,
                     distance=models.Distance.COSINE,
                 )
             )

@@ -9,7 +9,7 @@ from app.retrieval.qdrant_client import client
 client.recreate_collection(
     collection_name="semantic_memory",
     vectors_config=VectorParams(
-        size=384,
+        size=1536,
         distance=Distance.COSINE
     )
 )
