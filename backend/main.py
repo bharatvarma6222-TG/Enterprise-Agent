@@ -1,14 +1,20 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import traceback
 
-from app.api.chat import router as chat_router
-from app.api.stream import router as stream_router
-from app.api.upload import router as upload_router
+try:
+    from app.api.chat import router as chat_router
+    from app.api.stream import router as stream_router
+    from app.api.upload import router as upload_router
+
+except Exception:
+    traceback.print_exc()
+    raise
 from app.api.files import router as files_router
 from app.api.memory import router as memory_router
 from app.api.session import router as session_router
 from app.api.settings import router as settings_router
-from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(
     title="Enterprise Agent Gateway"
@@ -17,7 +23,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",
+        "*"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -38,15 +44,7 @@ app.include_router(
     tags=["Settings"],
 )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
 @app.get("/")
 def health():
     return {
