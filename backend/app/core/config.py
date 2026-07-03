@@ -3,12 +3,11 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     GROQ_API_KEY: str = ""
+    COHERE_API_KEY: str = ""
     TAVILY_API_KEY: str = ""
     QDRANT_URL: str = ""
     QDRANT_API_KEY: str = ""
     REDIS_URL: str = ""
-    COHERE_API_KEY: str = ""
-    HF_TOKEN: str = ""   # ← add this
 
     model_config = {"env_file": ".env"}
 
