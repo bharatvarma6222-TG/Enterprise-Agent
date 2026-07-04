@@ -14,7 +14,7 @@ client.delete_collection(
 client.create_collection(
     collection_name="documents_v2",
     vectors_config=VectorParams(
-        size=1536,
+        size=1024,
         distance=Distance.COSINE
     )
 )

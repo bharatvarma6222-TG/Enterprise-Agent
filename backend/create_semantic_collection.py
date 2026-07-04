@@ -12,7 +12,7 @@ client = get_qdrant_client()
 client.create_collection(
     collection_name="semantic_memory",
     vectors_config=VectorParams(
-        size=1536,
+        size=1024,
         distance=Distance.COSINE
     )
 )

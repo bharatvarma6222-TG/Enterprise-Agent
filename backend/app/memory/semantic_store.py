@@ -23,7 +23,7 @@ def ensure_memory_collection():
         client.create_collection(
             collection_name="semantic_memory",
             vectors_config=VectorParams(
-                size=1536,
+                size=1024,
                 distance=Distance.COSINE
             )
         )
@@ -134,7 +134,7 @@ def delete_all_memories():
     client.create_collection(
         collection_name="semantic_memory",
         vectors_config=VectorParams(
-            size=1536,
+            size=1024,
             distance=Distance.COSINE
         )
     )

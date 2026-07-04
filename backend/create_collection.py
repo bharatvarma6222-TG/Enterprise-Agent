@@ -9,7 +9,7 @@ client.create_collection(
     vectors_config=VectorParams(
         size=1024,
         distance=Distance.COSINE,
-    ),
+    )
 )
 
 print("Fresh collection created.")
