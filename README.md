@@ -4,7 +4,7 @@
 
 The main interface showing the Enterprise Agent workflow, chat, and agent activity.
 
-![Main Dashboard](screenshots/01-main-dashboard.png)
+![Main Dashboard](frontend/screenshots/01-main-dashboard.png)
 
 ---
 
