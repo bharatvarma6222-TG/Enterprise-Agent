@@ -12,7 +12,7 @@ The main interface showing the Enterprise Agent workflow, chat, and agent activi
 
 The agent automatically routes calculation-based queries to the appropriate tool.
 
-![Calculator Tool Routing](screenshots/02-tool-routing-calculator.png)
+![Calculator Tool Routing](frontend/screenshots/02-tool-routing-calculator.png)
 
 ---
 
@@ -20,7 +20,7 @@ The agent automatically routes calculation-based queries to the appropriate tool
 
 The agent can route queries requiring external information through web research.
 
-![Web Research](screenshots/03-web-research.png)
+![Web Research](frontend/screenshots/03-web-research.png)
 
 ---
 
@@ -28,7 +28,7 @@ The agent can route queries requiring external information through web research.
 
 Upload documents and ask questions using the hybrid retrieval pipeline.
 
-![PDF Retrieval](screenshots/04-rag-pdf-retrieval.png)
+![PDF Retrieval](frontend/screenshots/04-rag-pdf-retrieval.png)
 
 ---
 
@@ -36,7 +36,7 @@ Upload documents and ask questions using the hybrid retrieval pipeline.
 
 The guardrail layer detects prompt injection attempts before they reach the agent workflow.
 
-![Prompt Injection Guardrail](screenshots/05-prompt-injection-guardrail.png)
+![Prompt Injection Guardrail](frontend/screenshots/05-prompt-injection-guardrail.png)
 
 ---
 
@@ -52,4 +52,4 @@ Unsafe or potentially harmful requests are detected and blocked.
 
 Separate conversations can be created, loaded, and deleted through the chat management interface.
 
-![Chat Management](screenshots/07-chat-management.png)
+![Chat Management](frontend/screenshots/07-chat-management.png)
