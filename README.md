@@ -44,7 +44,7 @@ The guardrail layer detects prompt injection attempts before they reach the agen
 
 Unsafe or potentially harmful requests are detected and blocked.
 
-![Safety Guardrail](screenshots/06-safety-guardrail.png)
+![Safety Guardrail](frontend/screenshots/06-safety-guardrail.png)
 
 ---
 
