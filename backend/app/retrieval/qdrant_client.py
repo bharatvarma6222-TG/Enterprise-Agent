@@ -3,12 +3,17 @@ from qdrant_client.http import models
 
 from app.core.config import settings
 
-COLLECTION_NAME = "documents"
+COLLECTION_NAME = "documents_v2"
 
 client = QdrantClient(
     url=settings.QDRANT_URL,
     api_key=settings.QDRANT_API_KEY
 )
+
+print("=" * 80)
+print("QDRANT_URL =", repr(settings.QDRANT_URL))
+print("QDRANT_API_KEY =", settings.QDRANT_API_KEY[:10] + "...")
+print("=" * 80)
 
 
 def create_indexes():

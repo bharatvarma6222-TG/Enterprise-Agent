@@ -33,7 +33,25 @@ from app.retrieval.formatter import (
 )
 
 
+class AgentState(TypedDict, total=False):
+    query: str
+    session_id: str
+    answer: str
+    route: str
+    retrieval_context: str
+    citations: List[Any]
+    trace: List[Any]
+    logs: List[str]
+    metrics: Dict[str, Any]
+    plan: Any
+    tool: str
+    extracted_facts: List[Any]
+    guard_passed: bool
+    evaluation: Dict[str, Any]
+
+
 def initialize_state_node(state):
+
 
     state["trace"] = []
     state.setdefault("logs", [])
@@ -112,6 +130,8 @@ class AgentState(TypedDict):
 
 def tool_router_node(state):
 
+    print("🔥 ENTERED TOOL ROUTER NODE")
+
     trace_start(
         state,
         "tool_router"
@@ -173,17 +193,13 @@ def tool_execution_node(state):
 
         if tool == "calculator":
 
-            state["answer"] = str(
-                calculate(state["query"])
-            )
+            state["answer"] = calculate(state["query"])
 
             state["route"] = "direct"
 
         elif tool == "memory":
 
-            state["answer"] = str(
-                memory_search(state["query"])
-            )
+            state["answer"] = memory_search(state["query"])
 
             state["route"] = "direct"
 
@@ -270,6 +286,8 @@ def planner_node(state):
 
 
 def memory_node(state):
+
+    print("🔥 ENTERED MEMORY NODE")
 
     trace_start(
         state,
@@ -1142,7 +1160,6 @@ def blocked_node(state):
 
 
 workflow = StateGraph(AgentState)
-
 # =====================================================
 # ENTRY
 # =====================================================

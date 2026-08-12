@@ -1,123 +1,55 @@
-# 🤖 Enterprise Agent
+# 📸 Demo
 
+## 🖥️ Main Dashboard
 
-**Enterprise-grade Agentic AI Platform powered by LangGraph, Hybrid RAG, Redis Memory, Qdrant, and FastAPI.**
+The main interface showing the Enterprise Agent workflow, chat, and agent activity.
 
-# ✨ Highlights
-
-* 🤖 Multi-LLM Support (Groq • OpenAI • Anthropic • Ollama)
-* 📄 Intelligent PDF Knowledge Base
-* 🔍 Hybrid Retrieval-Augmented Generation (RAG)
-* 🧠 Redis Conversation Memory
-* 🌐 Tavily Web Search
-* 📦 Qdrant Vector Database
-* ⚡ LangGraph Agent Workflow
-* 🚀 FastAPI REST Backend
-* ☁️ Cloud Deployment Ready
+![Main Dashboard](screenshots/01-main-dashboard.png)
 
 ---
 
-# 🏗 Architecture
+## 🧮 Tool Routing — Calculator
 
-```text
-             User
-               │
-               ▼
-        FastAPI Backend
-               │
-               ▼
-       LangGraph Workflow
-     ┌─────────┼─────────┐
-     ▼         ▼         ▼
-  Memory     Tools      LLM
-     │         │
-     ▼         ▼
- Redis    Qdrant + Tavily
-```
+The agent automatically routes calculation-based queries to the appropriate tool.
+
+![Calculator Tool Routing](screenshots/02-tool-routing-calculator.png)
 
 ---
 
-# 🛠 Tech Stack
+## 🌐 Web Research
 
-| Category        | Technologies                    |
-| --------------- | ------------------------------- |
-| 🐍 Backend      | FastAPI, Python                 |
-| 🤖 AI Framework | LangGraph, LangChain            |
-| 🧠 LLMs         | Groq, OpenAI, Anthropic, Ollama |
-| 📦 Vector DB    | Qdrant                          |
-| 🔤 Embeddings   | Cohere                          |
-| 💾 Memory       | Redis (Upstash)                 |
-| 🌍 Search       | Tavily                          |
-| ☁️ Deployment   | Railway (Planned)               |
+The agent can route queries requiring external information through web research.
+
+![Web Research](screenshots/03-web-research.png)
 
 ---
 
-# 📚 Documentation
+## 📄 Hybrid RAG — PDF Retrieval
 
-| 📖 Guide              | 🔗 Link                         |
-| --------------------- | ------------------------------- |
-| 🏗 Architecture       | `docs/01-Architecture.md`       |
-| ⚙️ Installation       | `docs/02-Installation.md`       |
-| 🔑 Configuration      | `docs/03-Configuration.md`      |
-| 🚀 Deployment         | `docs/04-Deployment.md`         |
-| 📚 RAG Pipeline       | `docs/05-RAG-Pipeline.md`       |
-| 🧠 Memory System      | `docs/06-Memory-System.md`      |
-| 🔄 LangGraph Workflow | `docs/07-LangGraph-Workflow.md` |
-| 📁 Project Structure  | `docs/08-Project-Structure.md`  |
-| 🌐 API Reference      | `docs/09-API-Reference.md`      |
-| 🛣 Roadmap            | `docs/10-Roadmap.md`            |
+Upload documents and ask questions using the hybrid retrieval pipeline.
+
+![PDF Retrieval](screenshots/04-rag-pdf-retrieval.png)
 
 ---
 
-# 🚀 Quick Start
+## 🛡️ Prompt Injection Guardrail
 
-```bash
-git clone https://github.com/<YOUR_USERNAME>/enterprise-agent.git
+The guardrail layer detects prompt injection attempts before they reach the agent workflow.
 
-cd enterprise-agent
-
-pip install -r requirements.txt
-
-uvicorn app.main:app --reload
-```
-
-Open:
-
-```text
-http://localhost:8000/docs
-```
+![Prompt Injection Guardrail](screenshots/05-prompt-injection-guardrail.png)
 
 ---
 
-# 📸 Preview
+## 🚨 Safety Guardrail
 
-> Screenshots and workflow diagrams are available in the **docs/Images/** directory.
+Unsafe or potentially harmful requests are detected and blocked.
 
----
-
-# ⭐ Roadmap
-
-* ✅ Hybrid RAG
-* ✅ LangGraph Workflow
-* ✅ Redis Memory
-* ✅ Qdrant Integration
-* ✅ Tavily Search
-* 🚧 Railway Deployment
-* 🚧 React Frontend
-* 📅 Multi-Agent Collaboration
-* 📅 Long-Term Memory
-* 📅 Docker & Terraform Support
+![Safety Guardrail](screenshots/06-safety-guardrail.png)
 
 ---
 
-# 🤝 Contributing
+## 💬 Chat Management
 
-Pull requests, feature requests, and suggestions are welcome!
+Separate conversations can be created, loaded, and deleted through the chat management interface.
 
-See **CONTRIBUTING.md** for contribution guidelines.
-
----
-
-# 📄 License
-
-Released under the **MIT License**.
+![Chat Management](screenshots/07-chat-management.png)

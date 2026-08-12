@@ -1,8 +1,29 @@
-.venv/
-
-.env
-
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+.venv/
+venv/
 
+# Environment
+.env
+.env.*
+!.env.example
+
+# Runtime traces
+backend/data/traces/*.json
+
+# Uploaded documents
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
 .vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

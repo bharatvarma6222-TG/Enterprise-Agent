@@ -14,17 +14,12 @@ export interface Conversation {
 }
 
 interface ChatStore {
-
     sessionId: string;
-
     messages: ChatMessage[];
-
     conversations: Conversation[];
 
     setSessionId: (id: string) => void;
-
     setMessages: (messages: ChatMessage[]) => void;
-
     addMessage: (message: ChatMessage) => void;
 
     updateLastAssistant: (
@@ -33,161 +28,230 @@ interface ChatStore {
     ) => void;
 
     newChat: () => void;
-
     saveConversation: () => void;
-
     loadConversation: (id: string) => void;
 
+    deleteConversation: (id: string) => void;
+    clearAllConversations: () => void;
 }
 
 export const useChatStore = create<ChatStore>()(
-
     persist(
-
         (set, get) => ({
-
             sessionId: crypto.randomUUID(),
 
             messages: [],
 
             conversations: [],
 
-            setSessionId: (id) =>
+            setSessionId: (id) => {
                 set({
-                    sessionId: id
-                }),
+                    sessionId: id,
+                });
+            },
 
-            setMessages: (messages) =>
+            setMessages: (messages) => {
                 set({
-                    messages
-                }),
+                    messages,
+                });
+            },
 
-            addMessage: (message) =>
-                set(state => ({
+            addMessage: (message) => {
+                set((state) => ({
                     messages: [
                         ...state.messages,
-                        message
-                    ]
-                })),
+                        message,
+                    ],
+                }));
+            },
 
             updateLastAssistant: (
                 content,
                 append = false
-            ) =>
+            ) => {
+                set((state) => {
+                    const messages = [
+                        ...state.messages,
+                    ];
 
-                set(state => {
-
-                    const msgs = [...state.messages];
-
-                    for (let i = msgs.length - 1; i >= 0; i--) {
-
-                        if (msgs[i].role === "assistant") {
-
-                            msgs[i] = {
-
-                                ...msgs[i],
-
+                    for (
+                        let i = messages.length - 1;
+                        i >= 0;
+                        i--
+                    ) {
+                        if (
+                            messages[i].role ===
+                            "assistant"
+                        ) {
+                            messages[i] = {
+                                ...messages[i],
                                 content: append
-                                    ? msgs[i].content + content
+                                    ? messages[i].content +
+                                      content
                                     : content,
-
                             };
 
                             break;
-
                         }
-
                     }
 
                     return {
-                        messages: msgs
+                        messages,
                     };
+                });
+            },
 
-                }),
-
-            newChat: () =>
-                set({
-
-                    sessionId: crypto.randomUUID(),
-
-                    messages: [],
-
-                }),
-
-            saveConversation: () => {
-
+            newChat: () => {
                 const state = get();
 
-                if (state.messages.length === 0)
+                if (state.messages.length > 0) {
+                    const firstUserMessage =
+                        state.messages.find(
+                            (message) =>
+                                message.role === "user"
+                        );
+
+                    const title = firstUserMessage
+                        ? firstUserMessage.content.length >
+                          35
+                            ? firstUserMessage.content.slice(
+                                  0,
+                                  35
+                              ) + "..."
+                            : firstUserMessage.content
+                        : "New Chat";
+
+                    const conversation: Conversation = {
+                        id: state.sessionId,
+                        title,
+                        messages: [
+                            ...state.messages,
+                        ],
+                        createdAt: Date.now(),
+                    };
+
+                    set((previousState) => ({
+                        conversations: [
+                            conversation,
+                            ...previousState.conversations.filter(
+                                (chat) =>
+                                    chat.id !==
+                                    conversation.id
+                            ),
+                        ],
+                        sessionId:
+                            crypto.randomUUID(),
+                        messages: [],
+                    }));
+
                     return;
+                }
 
-                const firstUser = state.messages.find(
-                    m => m.role === "user"
-                );
+                set({
+                    sessionId: crypto.randomUUID(),
+                    messages: [],
+                });
+            },
 
-                const title = firstUser
-                    ? (
-                        firstUser.content.length > 35
-                            ? firstUser.content.slice(0, 35) + "..."
-                            : firstUser.content
-                    )
+            saveConversation: () => {
+                const state = get();
+
+                if (state.messages.length === 0) {
+                    return;
+                }
+
+                const firstUserMessage =
+                    state.messages.find(
+                        (message) =>
+                            message.role === "user"
+                    );
+
+                const title = firstUserMessage
+                    ? firstUserMessage.content.length > 35
+                        ? firstUserMessage.content.slice(
+                              0,
+                              35
+                          ) + "..."
+                        : firstUserMessage.content
                     : "New Chat";
 
                 const conversation: Conversation = {
-
                     id: state.sessionId,
-
                     title,
-
-                    messages: [...state.messages],
-
+                    messages: [
+                        ...state.messages,
+                    ],
                     createdAt: Date.now(),
-
                 };
 
-                set(prev => ({
-
+                set((previousState) => ({
                     conversations: [
-
                         conversation,
-
-                        ...prev.conversations.filter(
-                            c => c.id !== conversation.id
+                        ...previousState.conversations.filter(
+                            (chat) =>
+                                chat.id !==
+                                conversation.id
                         ),
-
                     ],
-
                 }));
-
             },
 
             loadConversation: (id) => {
+                const state = get();
 
-                const convo = get().conversations.find(
-                    c => c.id === id
-                );
+                const conversation =
+                    state.conversations.find(
+                        (chat) => chat.id === id
+                    );
 
-                if (!convo)
+                if (!conversation) {
                     return;
+                }
 
                 set({
-
-                    sessionId: convo.id,
-
-                    messages: [...convo.messages],
-
+                    sessionId: conversation.id,
+                    messages: [
+                        ...conversation.messages,
+                    ],
                 });
-
             },
 
+            deleteConversation: (id) => {
+                const state = get();
+
+                const remainingConversations =
+                    state.conversations.filter(
+                        (chat) => chat.id !== id
+                    );
+
+                if (state.sessionId === id) {
+                    set({
+                        conversations:
+                            remainingConversations,
+                        sessionId:
+                            crypto.randomUUID(),
+                        messages: [],
+                    });
+
+                    return;
+                }
+
+                set({
+                    conversations:
+                        remainingConversations,
+                });
+            },
+
+            clearAllConversations: () => {
+                set({
+                    conversations: [],
+                    sessionId: crypto.randomUUID(),
+                    messages: [],
+                });
+            },
         }),
-
         {
-
             name: "enterprise-agent-chat",
-
         }
-
     )
-
 );
