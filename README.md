@@ -32,17 +32,10 @@ Upload documents and ask questions using the hybrid retrieval pipeline.
 
 ---
 
-## 🛡️ Prompt Injection Guardrail
-
-The guardrail layer detects prompt injection attempts before they reach the agent workflow.
-
-![Prompt Injection Guardrail](frontend/screenshots/05-prompt-injection-guardrail.png)
-
----
-
 ## 🚨 Safety Guardrail
 
 Unsafe or potentially harmful requests are detected and blocked.
+The guardrail layer detects prompt injection attempts before they reach the agent workflow.
 
 ![Safety Guardrail](frontend/screenshots/06-safety-guardrail.png)
 
